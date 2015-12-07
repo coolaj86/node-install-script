@@ -7,7 +7,10 @@ Works for any recent version of Ubuntu or OS X.
 
 ```bash
 # Specify the version of node to install
-echo "v0.11.14" > /tmp/NODE_VER
+echo "v4.2.3" > /tmp/NODE_VER
+
+# Specify the Github url of your app
+echo "https://github.com/<user>/<project>" > /tmp/APP_URL
 
 # And install away!
 curl -fsSL bit.ly/easy-install-node | bash
@@ -29,6 +32,8 @@ This is what gets installed:
 * xcode / brew / build-essential / pkg-config / gcc
 * node
 * jshint
+* nginx
+* forever
 
 Screencast
 ==========

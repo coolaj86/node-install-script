@@ -3,23 +3,34 @@
 # curl -fsSL https://example.com/setup.bash | bash
 # wget -nv https://example.com/setup.bash -O - | bash
 
+echo ""
+echo "Script starting..."
+
 BASE_URL="https://raw.githubusercontent.com/coolaj86/node-install-script/master"
 
 if [ -n "$(which node 2>/dev/null || false)" ]; then
   echo ""
   echo "HEY, LISTEN:"
-  echo "node is already install as $(node -v | grep v)"
+  echo "node is already installed as $(node -v | grep v)"
   echo ""
   echo "to reinstall please first run: rm $(which node)"
   echo ""
 fi
 
 if [ -f "/tmp/NODE_VER" ]; then
-  NODE_VER=$(cat /tmp/NODE_VER | grep v)
+  NODE_VER=$(cat /tmp/NODE_VER)
 fi
+if [ -f "/tmp/APP_URL" ]; then
+  APP_URL=$(cat /tmp/APP_URL)
+fi
+
+echo "app url: $APP_URL"
+echo "node version: $NODE_VER"
+
 if [ -z "$NODE_VER" ]; then
-  NODE_VER="v0.11.14"
+  NODE_VER="v4.2.3"
 fi
+
 OS="unsupported"
 ARCH=""
 
@@ -145,5 +156,25 @@ if [ -z "$(which jshint | grep jshint)" ]; then
 else
   echo "jshint already installed"
 fi
+
+# clone app
+if [[ $APP_URL ]]; then
+  sudo bash -c "cd /home/ && git clone ${APP_URL} node-app && cd node-app && npm install" 
+fi
+
+# forever
+sudo bash -c "npm -g install forever"
+wget --quiet "${BASE_URL}/config-files/forever-node-init.sh" -O /etc/init.d/forever || echo 'error downloading forever config script'
+sudo bash -c "chmod a+x /etc/init.d/forever"
+sudo bash -c "update-rc.d forever defaults"
+if [[ $APP_URL ]]; then
+  sudo bash -c "forever start /home/node-app/index.js"
+fi
+
+# nginx
+echo "installing nginx..."
+sudo bash -c "apt-get install -qq -y nginx < /dev/null" > /dev/null
+wget --quiet "${BASE_URL}/config-files/nginx-config" -O /etc/nginx/sites-enabled/default || echo 'error configuring nginx'
+sudo bash -c "service nginx reload"
 
 echo ""
