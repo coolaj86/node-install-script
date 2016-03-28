@@ -1,47 +1,47 @@
-# Automated node.js installers for OS X and Ubuntu
+# Easy Install node.js
 
-A script to install basic development tools for node.js - git, node, gcc, pkg-config, etc
+Automated node.js installers for OS X and Ubuntu
 
-Pick one:
+**node.js only** (no git, gcc, etc)
 
-* [OS X](#apple-os-x)
-* [Ubuntu Linux](#ubuntu-linux)
-* [TL;DR](#tldr)
-* [Important Notes](#other-things-you-should-know)
+```bash
+# node.js without development dependencies
+curl -fsSL bit.ly/nodejs-min | bash
+
+# using wget instead of curl (Ubuntu)
+wget -nv bit.ly/nodejs-min -O - | bash
+```
+
+**node.js + dev tools**
+
+A script to install node.js and (optionally) basic development tools for node.js - git, node, gcc, pkg-config, etc
+
+```bash
+curl -fsSL bit.ly/nodejs-dev-install -o /tmp/node-dev.sh; bash /tmp/node-dev.sh
+```
+
+<!-- bit.ly/easy-install-node -->
 
 ## Screencast
 
 [How to Setup a VPS for node.js Development](https://www.youtube.com/watch?v=ypjzi1axH2A) - [(3:06 installing node.js](https://www.youtube.com/watch?v=ypjzi1axH2A#t=186))
 
-## TL;DR
-
-If you kinda know what you're doing already:
-
-**node.js + dev tools**
+## Choosing a specific version
 
 ```bash
 echo "Current node.js version is $(curl -fsSL https://nodejs.org/dist/index.tab | head -2 | tail -1 | cut -f 1)"
-
-curl -fsSL bit.ly/install-nodejs-dev -o /tmp/node-dev.sh; bash /tmp/node-dev.sh
-```
-
-<!-- bit.ly/easy-install-node -->
-
-**node.js only** (no git, gcc, etc)
-
-```bash
 # To install a specific version rather than defaulting to latest
-# latest version at time of writing are v1.8.4, v2.5.0, and v3.1.0
-echo "v2.5.0" > /tmp/IOJS_VER
-
-# node.js without development dependencies
-curl -fsSL bit.ly/nodejs-min | bash
-
-# Ubuntu without curl
-wget -nv bit.ly/nodejs-min -O - | bash
+# latest version at time of writing are v4.4.1 and v5.9.1
+echo "v5.9.1" > /tmp/IOJS_VER
 ```
 
-## Apple OS X
+## Notes
+
+* [OS X](#apple-os-x)
+* [Ubuntu Linux](#ubuntu-linux)
+* [Important Notes](#other-things-you-should-know)
+
+### Apple OS X
 
 First you need to **Install XCode Command Line Tools**
 
@@ -62,18 +62,18 @@ Type `agree` and hit enter to accept the license.
 Now you can install node.js
 
 ```bash
-curl -fsSL bit.ly/install-nodejs-dev -o /tmp/node-dev.sh; bash /tmp/node-dev.sh
+curl -fsSL bit.ly/nodejs-dev-install -o /tmp/node-dev.sh; bash /tmp/node-dev.sh
 ```
 
 *TODO*: Make it easier to accepting the license (automatic?)
 
-## Ubuntu Linux
+### Ubuntu Linux
 
 ```bash
-wget -nv bit.ly/install-nodejs-dev -O /tmp/node-dev.sh; bash /tmp/node-dev.sh
+wget -nv bit.ly/nodejs-dev-install -O /tmp/node-dev.sh; bash /tmp/node-dev.sh
 ```
 
-## Other things you should know
+### Other things you should know
 
 This is what gets installed:
 
