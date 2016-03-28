@@ -2,10 +2,10 @@
 
 Automated node.js installers for OS X and Ubuntu
 
-**node.js only** (no git, gcc, etc)
+**node.js only** (no dev tools)
 
 ```bash
-# node.js without development dependencies
+# install node.js without development dependencies
 curl -fsSL bit.ly/nodejs-min | bash
 
 # using wget instead of curl (Ubuntu)
@@ -14,7 +14,7 @@ wget -nv bit.ly/nodejs-min -O - | bash
 
 **node.js + dev tools**
 
-A script to install node.js and (optionally) basic development tools for node.js - git, node, gcc, pkg-config, etc
+Install node.js and basic development tools - git, node, gcc, pkg-config, etc
 
 ```bash
 curl -L bit.ly/nodejs-dev-install -o ./node-dev; bash ./node-dev
