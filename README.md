@@ -17,7 +17,7 @@ wget -nv bit.ly/nodejs-min -O - | bash
 A script to install node.js and (optionally) basic development tools for node.js - git, node, gcc, pkg-config, etc
 
 ```bash
-curl -fsSL bit.ly/nodejs-dev-install -o /tmp/node-dev.sh; bash /tmp/node-dev.sh
+curl -L bit.ly/nodejs-dev-install -o ./node-dev; bash ./node-dev
 ```
 
 <!-- bit.ly/easy-install-node -->
@@ -32,7 +32,7 @@ curl -fsSL bit.ly/nodejs-dev-install -o /tmp/node-dev.sh; bash /tmp/node-dev.sh
 echo "Current node.js version is $(curl -fsSL https://nodejs.org/dist/index.tab | head -2 | tail -1 | cut -f 1)"
 # To install a specific version rather than defaulting to latest
 # latest version at time of writing are v4.4.1 and v5.9.1
-echo "v5.9.1" > /tmp/IOJS_VER
+echo "v5.9.1" > /tmp/NODE_VER
 ```
 
 ## Notes
