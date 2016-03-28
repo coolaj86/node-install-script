@@ -30,6 +30,9 @@ curl -L bit.ly/nodejs-dev-install -o ./node-dev; bash ./node-dev
 
 ```bash
 echo "Current node.js version is $(curl -fsSL https://nodejs.org/dist/index.tab | head -2 | tail -1 | cut -f 1)"
+```
+
+```bash
 # To install a specific version rather than defaulting to latest
 # latest version at time of writing are v4.4.1 and v5.9.1
 echo "v5.9.1" > /tmp/NODE_VER
