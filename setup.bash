@@ -183,7 +183,7 @@ if [ -z "$(which fail2ban-server | grep fail2ban)" ]; then
   echo "Your server didn't come with fail2ban preinstalled!!!"
   echo "Among other things, fail2ban secures ssh so that your server isn't reaped by botnets."
   echo ""
-  echo "Since you're obviosly connecting this computer to a network, you should install fail2ban before continuing"
+  echo "Since you're obviously connecting this computer to a network, you should install fail2ban before continuing"
   echo ""
   echo "Install fail2ban? [Y/n]"
   echo "(if unsure, just hit [enter])"
