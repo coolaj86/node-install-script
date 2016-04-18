@@ -20,5 +20,6 @@ if [ -n "${NODEJS_VER}" ]; then
   curl -fsSL "${NODEJS_REMOTE}" -o "${NODEJS_PKG}"
   sudo /usr/sbin/installer -pkg "${NODEJS_PKG}" -target /
   
-  sudo chown -R $(whoami) /usr/local/lib/node_modules/ 2>/dev/null
+  sudo chown -R $(whoami) /usr/local/lib/node_modules/
+  sudo chown $(whoami) /usr/local/bin/
 fi
