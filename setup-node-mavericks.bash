@@ -19,6 +19,6 @@ if [ -n "${NODEJS_VER}" ]; then
   echo "installing ${NODEJS_NAME} as ${NODEJS_NAME} ${NODEJS_VER}..."
   curl -fsSL "${NODEJS_REMOTE}" -o "${NODEJS_PKG}"
   sudo /usr/sbin/installer -pkg "${NODEJS_PKG}" -target /
-
-  sudo chown -R $(whoami) /usr/local 2>/dev/null
+  
+  sudo chown -R $(whoami) /usr/local/lib/node_modules/ 2>/dev/null
 fi
