@@ -45,4 +45,5 @@ if [ -n "${NODEJS_VER}" ]; then
 
 
   sudo chown -R $(whoami) /usr/local/lib/node_modules/
+  sudo chown $(whoami) /usr/local/bin/
 fi
