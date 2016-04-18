@@ -44,5 +44,5 @@ if [ -n "${NODEJS_VER}" ]; then
   sudo rsync -a "${NODEJS_UNTAR}/" /usr/local/
 
 
-  sudo chown -R $(whoami) /usr/local
+  sudo chown -R $(whoami) /usr/local/lib/node_modules/
 fi
