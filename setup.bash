@@ -96,6 +96,8 @@ elif [ "$(uname | grep -i 'Linux')" ]; then
     OS='ubuntu'
   elif [ "$(cat /etc/issue | grep -i 'elementary OS')" ]; then
     OS='ubuntu'
+  elif [ "$(cat /etc/issue | grep -i 'Debian')" ]; then
+    OS='ubuntu'
   elif [ "$(cat /etc/issue | grep -i 'Raspbian')" ]; then
     OS='raspbian'
   elif [ "$(cat /etc/issue | grep -i 'Fedora')" ]; then
