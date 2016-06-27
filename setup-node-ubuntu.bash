@@ -11,8 +11,12 @@ then
   NODEJS_NAME="iojs"
 fi
 
-if [ -n "$(arch | grep 64)" ]; then
+if [ -n "$(arch | grep aarch64)" ]; then
+  ARCH="arm64"
+elif [ -n "$(arch | grep 64)" ]; then
   ARCH="x64"
+elif [ -n "$(arch | grep armv8l)" ]; then
+  ARCH="arm64"
 elif [ -n "$(arch | grep armv7l)" ]; then
   ARCH="armv7l"
 elif [ -n "$(arch | grep armv6l)" ]; then
