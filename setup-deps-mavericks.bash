@@ -32,6 +32,13 @@ if [ -z "$(xcode-select --print-path 2>/dev/null)" ] || [ -z "$(git --version 2>
   while true; do
     sleep 5
 
+    if [ -n "$(xcode-select --print-path 2>/dev/null)" ]; then
+      # Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
+      echo "Now running 'sudo xcodebuild -license' so that you can accept the license agreement"
+      sudo xcodebuild -license
+    fi
+    # http://stackoverflow.com/questions/15371925/how-to-check-if-command-line-tools-is-installed
+
     if [ -n "$(git --version 2>/dev/null)" ] && [ -n "$(xcode-select --print-path 2>/dev/null)" ]; then
       break;
     fi
