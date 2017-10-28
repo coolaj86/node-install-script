@@ -1,2 +1,3 @@
 # Moved
-### [node-install-script](https://git.daplie.com/coolaj86/node-install-script) is now at [git.daplie.com/coolaj86/node-install-script](https://git.daplie.com/coolaj86/node-install-script)
+
+### [node-install-script](https://git.coolaj86.com/coolaj86/node-installer.sh) is now at [git.coolaj86.com/coolaj86/node-installer.sh](https://git.coolaj86.com/coolaj86/node-installer.sh)
