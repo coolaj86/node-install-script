@@ -5,9 +5,9 @@ TMP_FILE='/tmp/node-installer-new.sh'
 set -e
 rm -rf /tmp/node-installer-new.sh
 
-echo "Downloading and running the new installer script from https://git.daplie.com/coolaj86/node-install-script/raw/master/setup.bash"
+echo "Downloading and running the new installer script from https://git.daplie.com/coolaj86/node-installer.sh/raw/master/setup.bash"
 
-SETUP_URL='https://git.daplie.com/coolaj86/node-install-script/raw/master/setup.bash'
+SETUP_URL='https://git.daplie.com/coolaj86/node-installer.sh/raw/master/setup.bash'
 
 
 if [ -n "$(which curl)" ]; then
